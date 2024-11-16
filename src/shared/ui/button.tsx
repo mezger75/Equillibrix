@@ -6,7 +6,7 @@ export const Button = ({ children, className }: React.PropsWithChildren<ButtonPr
     return (
         <NextUIButton
             className={cn(
-                'bg-gradient-to-tr from-pink-500 to-yellow-500 text-white uppercase font-semibold border-2 border-purple-600',
+                'bg-gradient-to-tr from-purple-700 to-blue-500 text-white uppercase font-semibold border-2 border-purple-600',
                 className,
             )}
         >
