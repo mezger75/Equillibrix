@@ -29,6 +29,10 @@ createAppKit({
     networks: [mainnet, baseSepolia, sepolia, arbitrumSepolia],
     defaultNetwork: mainnet,
     metadata: metadata,
+    features: {
+        socials: ['google', 'github', 'apple'],
+    },
+    allWallets: 'ONLY_MOBILE',
 });
 
 function ContextProvider({ children, cookies }: { children: ReactNode; cookies: string | null }) {
