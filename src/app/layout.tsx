@@ -31,7 +31,9 @@ export default function RootLayout({
     const cookies = headers().get('cookie');
     return (
         <html lang="en" className="dark">
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+            <body
+                className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-tr from-purple-900 to-blue-600`}
+            >
                 <Providers>
                     <ContextProvider cookies={cookies}>
                         <MainLayout>{children}</MainLayout>
