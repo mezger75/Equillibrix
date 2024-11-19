@@ -2,7 +2,13 @@ import { cn } from '@/shared/lib';
 import { Button as NextUIButton, ButtonProps } from '@nextui-org/react';
 import React from 'react';
 
-export const Button = ({ children, className, onClick }: React.PropsWithChildren<ButtonProps>) => {
+export const Button = ({
+    children,
+    className,
+    onClick,
+    as,
+    href,
+}: React.PropsWithChildren<ButtonProps>) => {
     return (
         <NextUIButton
             className={cn(
@@ -10,6 +16,8 @@ export const Button = ({ children, className, onClick }: React.PropsWithChildren
                 className,
             )}
             onClick={onClick}
+            as={as}
+            href={href}
         >
             {children}
         </NextUIButton>
