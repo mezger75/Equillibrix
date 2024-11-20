@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { createAppKit } from '@reown/appkit/react';
 import { baseSepolia, arbitrumSepolia, sepolia, mainnet } from '@reown/appkit/networks';
 import { cookieToInitialState, WagmiProvider, type Config } from 'wagmi';
+import { customChain } from '@/shared/config';
 
 // Set up queryClient
 const queryClient = new QueryClient();
@@ -26,8 +27,8 @@ const metadata = {
 createAppKit({
     adapters: [wagmiAdapter],
     projectId,
-    networks: [mainnet, baseSepolia, sepolia, arbitrumSepolia],
-    defaultNetwork: mainnet,
+    networks: [customChain, mainnet, baseSepolia, sepolia, arbitrumSepolia],
+    defaultNetwork: customChain,
     metadata: metadata,
     features: {
         socials: ['google', 'github', 'apple'],
