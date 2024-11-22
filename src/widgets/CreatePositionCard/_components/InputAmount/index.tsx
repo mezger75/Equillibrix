@@ -1,6 +1,5 @@
 import { Input } from '@nextui-org/react';
 import { useGetBalance } from '@/shared/hooks/useGetBalance';
-import styles from './index.module.scss';
 import { useStore } from '@/shared/hooks/useStore';
 
 export const InputAmount = () => {
@@ -31,7 +30,7 @@ export const InputAmount = () => {
             label="Amount"
             labelPlacement="inside"
             placeholder="Enter amount"
-            className={styles.input}
+            className="w-full m-0 [&_input::-webkit-outer-spin-button]:appearance-none [&_input::-webkit-inner-spin-button]:appearance-none [&_input::-moz-outer-spin-button]:appearance-none [&_input::-moz-inner-spin-button]:appearance-none"
             onKeyDown={handleKeyDown}
             onPaste={handlePaste}
             endContent={
