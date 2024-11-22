@@ -1,4 +1,6 @@
-import { Image } from '@nextui-org/react';
+import Image from 'next/image';
+import EthIcon from '/public/eth.webp';
+import UsdtIcon from '/public/usdt.webp';
 
 type Props = {
     chain?: string;
@@ -10,24 +12,16 @@ export const TitleAmount = ({ chain }: Props) => {
             <Image
                 width={36}
                 height={36}
-                src="/eth.png"
+                src={EthIcon}
                 alt="ether"
-                className="rounded-full overflow-hidden"
-                style={{
-                    maxWidth: '100%',
-                    height: 'auto',
-                }}
+                className="rounded-full overflow-hidden max-w-full h-auto"
             />
             <Image
                 width={36}
                 height={36}
-                src="/usdt.png"
-                alt="ether"
-                className="mr-2 -ml-2 rounded-full overflow-hidden"
-                style={{
-                    maxWidth: '100%',
-                    height: 'auto',
-                }}
+                src={UsdtIcon}
+                alt="usdt"
+                className="mr-2 -ml-2 rounded-full overflow-hidden max-w-full h-auto"
             />
             <div className="flex flex-col gap-1">
                 <span className="whitespace-nowrap">ETH/USDT on Fluid</span>
@@ -37,12 +31,9 @@ export const TitleAmount = ({ chain }: Props) => {
                         <Image
                             width={16}
                             height={16}
-                            src="/eth.png"
+                            src={EthIcon}
                             alt="ether"
-                            style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                            }}
+                            className="max-w-full h-auto"
                         />
                     </div>
                 )}
