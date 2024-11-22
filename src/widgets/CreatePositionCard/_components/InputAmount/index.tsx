@@ -1,35 +1,45 @@
 import { Input } from '@nextui-org/react';
-import { LIST_OF_WRAPPED_TOKENS_AND_STABLECOINS } from './_constants';
 import { useGetBalance } from '@/shared/hooks/useGetBalance';
+import { useStore } from '@/shared/hooks/useStore';
 
-type Props = {
-    balance: string;
-};
-
-export const InputAmount = ({ balance }: Props) => {
+export const InputAmount = () => {
     const userBalance = useGetBalance();
+    const { setAmount } = useStore();
+
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === '+' || event.key === '-') {
+            event.preventDefault();
+        }
+    };
+
+    const handlePaste = (event: React.ClipboardEvent<HTMLInputElement>) => {
+        const paste = event.clipboardData.getData('text');
+        if (/[+-]/.test(paste)) {
+            event.preventDefault();
+        }
+    };
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setAmount(event.target.value);
+    };
+
     return (
         <Input
             variant="bordered"
-            type="text"
+            type="number"
             label="Amount"
             labelPlacement="inside"
             placeholder="Enter amount"
-            className="w-full"
+            className="w-full m-0 [&_input::-webkit-outer-spin-button]:appearance-none [&_input::-webkit-inner-spin-button]:appearance-none [&_input::-moz-outer-spin-button]:appearance-none [&_input::-moz-inner-spin-button]:appearance-none"
+            onKeyDown={handleKeyDown}
+            onPaste={handlePaste}
             endContent={
-                <div className="flex flex-col items-end md:flex-nowrap md:mb-0 gap-2">
-                    <div className="flex text-xs">
-                        <span className="text-default-400 ">Balance: </span>
-                        <span className="text-right">{userBalance}</span>
-                    </div>
-
-                    <select className="outline-none border-0 bg-transparent text-default-400 text-xs">
-                        {LIST_OF_WRAPPED_TOKENS_AND_STABLECOINS.map((item) => (
-                            <option key={item.key}>{item.label}</option>
-                        ))}
-                    </select>
+                <div className="flex md:flex-nowrap mb-4 gap-1 text-xs">
+                    <span className="text-default-400">Balance: </span>
+                    <span>{userBalance}</span>
                 </div>
             }
+            onChange={handleChange}
         />
     );
 };

@@ -1,23 +1,25 @@
 import { Button } from '@nextui-org/react';
 import { InputAmount, SliderAmount, TitleAmount } from './_components';
+import { useAccount } from 'wagmi';
+import { useAppKit } from '@reown/appkit/react';
 
-type Props = {
-    balance: string;
-    pair: string;
-    market: string;
-    chain: string;
-};
+export const CreatePositionCard = () => {
+    const { isConnected, chain } = useAccount();
+    const { open } = useAppKit();
 
-export const CreatePositionCard = ({ balance, pair, market, chain }: Props) => {
     return (
-        <div className="flex flex-col gap-6 p-4 md:mt-4 w-full bg-[rgb(31,33,45)] bg-opacity-100 rounded-lg md:w-1/2 md:max-w-none max-w-md ">
-            <TitleAmount pair={pair} market={market} chain={chain} />
+        <div className="flex flex-col gap-6 p-4 md:mt-4 w-full bg-[rgb(31,33,45)] bg-opacity-100 rounded-lg md:w-1/2 md:max-w-none max-w-md">
+            <TitleAmount chain={chain?.name} />
 
-            <InputAmount balance={balance} />
+            <InputAmount />
 
             <SliderAmount />
 
-            <Button>Submit Deposit</Button>
+            {isConnected ? (
+                <Button>Submit Deposit</Button>
+            ) : (
+                <Button onClick={() => open()}>Connect Wallet</Button>
+            )}
         </div>
     );
 };
