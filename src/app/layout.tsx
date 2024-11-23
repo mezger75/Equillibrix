@@ -19,7 +19,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-    title: 'Equillibrix: Умная доходность на DeFi',
+    title: 'Equillibrix: Smart Yield on DeFi',
     description: `
     Equillibrix is ​​an innovative DeFi protocol that offers stable returns through delta-neutral strategies that minimize risks regardless of market direction. Automated strategies use long and short positions simultaneously, allowing you to earn on relative changes in asset prices, rather than on market movements. The platform automates complex calculations, simplifying the work for investors of all skill levels, providing a convenient dashboard for managing balances and returns. Users can choose from different strategies and assets to diversify and control risks. Equillibrix makes managing crypto assets in DeFi simple, secure, and transparent.`,
 };
