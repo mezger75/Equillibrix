@@ -21,7 +21,7 @@ export const wagmiAdapter = new WagmiAdapter({
     projectId,
     networks,
     transports: {
-        [mainnet.id]: http(process.env.NEXT_PUBLIC_RPC_URL),
+        [customChain.id]: http(process.env.NEXT_PUBLIC_RPC_URL),
     },
 });
 

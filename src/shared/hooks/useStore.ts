@@ -9,7 +9,7 @@ interface StoreState {
 
 export const useStore = create<StoreState>()((set) => ({
   amount: '0',
-  leverage: 5,
+  leverage: 1,
   setAmount: (amount) => set(() => ({ amount })),
   setLeverage: (leverage) => set(() => ({ leverage })),
 }))
