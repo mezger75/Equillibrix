@@ -34,7 +34,7 @@ export const MyPositionCard: React.FC<MyPositionCardProps> = ({
             <div className="space-y-4">
                 {/* Header */}
                 <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center">
                         <Image 
                             width={36}
                             height={36}

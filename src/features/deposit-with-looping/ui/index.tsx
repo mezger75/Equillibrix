@@ -4,10 +4,17 @@ import { Button } from '@/shared/ui/button';
 import { Link } from '@nextui-org/react';
 import { Card, Tooltip } from '@nextui-org/react';
 import { MyPositionCard } from '@/widgets/MyPositionCard/MyPositionCard';
+import { label } from 'framer-motion/client';
 
 const totalSupply = 100;
 const totalBorrow = 75;
 const totalValue = 100;
+
+const data = [
+    { id: 1, label: "Your Total Supply", value: totalSupply },
+    { id: 1, label: "Total Value", value: totalValue },
+    { id: 1, label: "Your Total Borrow", value: totalBorrow }
+];
 
 export const DepositWithLoopingCard = () => {
     const isPositionsExist = true;
@@ -22,36 +29,16 @@ export const DepositWithLoopingCard = () => {
             <h1 className="text-4xl font-bold text-white mb-8 text-center">Dashboard</h1>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                <Card className="bg-card-dark/60 p-6 backdrop-blur-md">
-                    <div className="flex items-center gap-4">
-                        {/* <div className="p-3 rounded-full bg-green-500/10">
-                            <ArrowDownToLine className="w-6 h-6 text-green-500" />
-                        </div> */}
-                        <div>
-                            <p className="text-gray-400">Your Total Supply</p>
-                            <p className="text-2xl font-bold text-white">${totalSupply}</p>
+                {data.map((item) => (
+                    <Card key={item.id} className="bg-card-dark/60 p-6 backdrop-blur-md">
+                        <div className="flex items-center gap-4">
+                            <div>
+                                <p className="text-gray-400">{item.label}</p>
+                                <p className="text-2xl font-bold text-white">${item.value}</p>
+                            </div>
                         </div>
-                    </div>
-                </Card>
-                <Card className="bg-card-dark/60 p-6 backdrop-blur-md">
-                    <div className="flex items-center gap-4">
-                        <div className="items-center">
-                            <p className="text-gray-400">Total Value</p>
-                            <p className="text-2xl font-bold text-white">${totalValue}</p>
-                        </div>
-                    </div>
-                </Card>
-                <Card className="bg-card-dark/60 p-6 backdrop-blur-md">
-                    <div className="flex items-center gap-4">
-                        {/* <div className="p-3 rounded-full bg-red-500/10">
-                            <ArrowUpToLine className="w-6 h-6 text-red-500" />
-                        </div> */}
-                        <div>
-                            <p className="text-gray-400">Your Total Borrow</p>
-                            <p className="text-2xl font-bold text-white">${totalBorrow}</p>
-                        </div>
-                    </div>
-                </Card>
+                    </Card>
+                ))}
             </div>
 
             {/* Positions Section */}
