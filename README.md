@@ -3,6 +3,8 @@
 
 Equilibrix is an innovative DeFi protocol that leverages delta-neutral strategies to provide stable and secure returns for investors, regardless of market direction. Its primary goal is to simplify investment management by automating complex calculations and reducing market risks.
 
+**Note**: This repository contains only the frontend part of the project. The backend and other components are managed in separate repositories.
+
 ---
 
 ## Key Features
@@ -19,14 +21,37 @@ Equilibrix makes DeFi accessible to everyone, offering a seamless experience for
 
 ## Core Technologies and Tools
 
-- **React**
-- **Next.js**
-- **TypeScript**
-- **TailwindCSS**
-- **Wagmi**
-- **Node.js**
-- **ESLint**
-- **Prettier**
+1. **React**  
+  Description: A JavaScript library for building user interfaces, React allows developers to create reusable UI components and manage the state efficiently in web applications.  
+  Documentation: [React Docs](https://react.dev/)
+
+2. **Next.js**  
+  Description: A React framework for building server-side rendered and statically generated web applications. It provides features like routing, API handling, and optimization out of the box.  
+  Documentation: [Next.js Docs](https://nextjs.org/docs)
+
+3. **TypeScript**  
+  Description: A superset of JavaScript that adds static typing, enhancing code readability, maintainability, and reducing bugs during development.  
+  Documentation: [TypeScript Docs](https://www.typescriptlang.org/docs/)
+
+4. **TailwindCSS**  
+  Description: A utility-first CSS framework that allows developers to design responsive and modern interfaces directly in the markup with predefined CSS classes.  
+  Documentation: [TailwindCSS Docs](https://tailwindcss.com/docs)
+
+5. **Wagmi**  
+  Description: A set of React hooks for working with Ethereum-based applications, enabling features like wallet connection, contract interaction, and more in Web3 projects.  
+  Documentation: [Wagmi Docs](https://wagmi.sh/docs)
+
+6. **NextUI**  
+  Description: A React UI library designed to provide customizable and accessible components to build responsive and beautiful user interfaces effortlessly.  
+  Documentation: [NextUI Docs](https://nextui.org/docs)
+
+7. **ESLint**  
+  Description: A static code analysis tool for identifying and fixing problematic patterns in JavaScript and TypeScript code, ensuring consistent coding standards.  
+  Documentation: [ESLint Docs](https://eslint.org/docs/latest/)
+
+8. **Prettier**  
+  Description: An opinionated code formatter for JavaScript, TypeScript, and other languages, Prettier enforces consistent styling rules to improve code readability.  
+  Documentation: [Prettier Docs](https://prettier.io/docs/en/)
 
 ---
 
@@ -85,7 +110,13 @@ pnpm dev
 
 The application will be available at http://localhost:3000.
 
-5. Build for Production (Optional)
+5. Start the Project in Production Mode
+
+To start the project in production mode:
+
+npm run start
+
+6. Build for Production (Optional)
 
 To build the project for production:
 
@@ -93,7 +124,7 @@ npm run build
 
 The build output will be located in the .next/ folder.
 
-6. Lint and Format Code (Optional)
+7. Lint and Format Code (Optional)
 
 Run Prettier and ESLint to ensure code quality:
 
@@ -168,5 +199,7 @@ Next.js Documentation - learn about Next.js features and API.
 Learn Next.js - an interactive Next.js tutorial.
 
 Vercel Documentation - learn about deploying with Vercel.
+
+
 
 ---
