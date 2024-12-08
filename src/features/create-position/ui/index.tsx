@@ -12,7 +12,7 @@ export const CreatePosition = () => {
                 <BackButton href="/" as={Link} />
             </div>
 
-            <div className="flex flex-col items-center md:items-start md:flex-row gap-4 md:w-full max-w-4xl h-screen w-screen">
+            <div className="flex flex-col items-center md:items-start md:flex-row gap-4 md:w-full max-w-4xl h-full w-screen">
                 <CreatePositionCard />
                 <GeneralInfoCard />
             </div>

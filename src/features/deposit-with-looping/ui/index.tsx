@@ -12,8 +12,8 @@ const totalValue = 100;
 
 const data = [
     { id: 1, label: "Your Total Supply", value: totalSupply },
-    { id: 1, label: "Total Value", value: totalValue },
-    { id: 1, label: "Your Total Borrow", value: totalBorrow }
+    { id: 2, label: "Total Value", value: totalValue },
+    { id: 3, label: "Your Total Borrow", value: totalBorrow }
 ];
 
 export const DepositWithLoopingCard = () => {
@@ -25,7 +25,7 @@ export const DepositWithLoopingCard = () => {
 
 
     return (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-1 overflow-auto"> 
             <h1 className="text-4xl font-bold text-white mb-8 text-center">Dashboard</h1>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
@@ -55,7 +55,7 @@ export const DepositWithLoopingCard = () => {
             </div>
 
             {isPositionsExist ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
                     <MyPositionCard 
                         id="1460"
                         token1="ETH"
