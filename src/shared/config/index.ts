@@ -1,15 +1,15 @@
-import { defineChain } from "@reown/appkit/networks";
+import { defineChain } from '@reown/appkit/networks';
 
 // Define the custom network
 export const customChain = defineChain({
-    id: 777,
-    caipNetworkId: 'eip155:777',
+    id: 8888,
+    caipNetworkId: 'eip155:8888',
     chainNamespace: 'eip155',
-    name: 'Equillibrix',
+    name: 'XANAChain',
     nativeCurrency: {
         decimals: 18,
-        name: 'cEther',
-        symbol: 'cTH',
+        name: 'XETA',
+        symbol: 'X',
     },
     rpcUrls: {
         default: {
@@ -18,7 +18,10 @@ export const customChain = defineChain({
         },
     },
     blockExplorers: {
-        default: { name: 'Explorer', url: '' },
+        default: {
+            name: 'Explorer',
+            url: 'https://dashboard.tenderly.co/explorer/vnet/b3027522-2c03-4ed7-a97f-0c9379b3fc04/transactions',
+        },
     },
     contracts: {
         // Add the contracts here
