@@ -17,7 +17,7 @@ const data = [
 ];
 
 export const DepositWithLoopingCard = () => {
-    const isPositionsExist = true;
+    const isPositionsExist = false;
 
     const handleManage = () => {
         console.log('Manage position');
@@ -25,7 +25,7 @@ export const DepositWithLoopingCard = () => {
 
 
     return (
-        <div className="flex flex-col gap-1 overflow-auto"> 
+        <div className="flex flex-col gap-1 w-full overflow-auto px-24"> 
             <h1 className="text-4xl font-bold text-white mb-8 text-center">Dashboard</h1>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
@@ -55,7 +55,7 @@ export const DepositWithLoopingCard = () => {
             </div>
 
             {isPositionsExist ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
                     <MyPositionCard 
                         id="1460"
                         token1="ETH"
